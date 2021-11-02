@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+spring:
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6380
+    database: 6
+    jedis:
+      pool:
+        min-idle: 2
+        max-idle: 10
+
+
+proxy:
+  servlet_url: /api/* # 代理的本地路由
+  target_url: http://ip-api.com/json/?lang=zh-CN # 要代理的地址
+
+api:
+  self-ip: http://ip-api.com/json/?lang=zh-CN
+  client-ip: http://ip-api.com/json/0.0.0.0?lang=zh-CN
+
+logging:
+  level:
+    o.s.*: debug
